@@ -25,13 +25,18 @@ export class Items{
     const root = options.root
     if(!root){return}
     this.#root = root
-    this.#root_width  = window.innerWidth
-    this.#root_height = window.innerHeight
+    this.#set_window_size()
     const img = this.#root.querySelector(`:scope > img`)
     if(!img){return}
     this.#src = img.getAttribute("src")
     img.parentNode.removeChild(img)
     this.#copy(options)
+    this.#set_event()
+  }
+
+  #set_window_size(){
+    this.#root_width  = window.innerWidth
+    this.#root_height = window.innerHeight
   }
 
   #copy(options){
@@ -106,5 +111,12 @@ export class Items{
   #get_move(move){
     if(!move){return 0}
     return Math.floor(Math.random() * (move / 2) + (move / 2))
+  }
+
+  /**
+   * Event
+   */
+  #set_event(){
+    window.addEventListener("resize", this.#set_window_size.bind(this))
   }
 }
