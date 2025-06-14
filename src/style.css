@@ -7,7 +7,6 @@
   width:100vw;
   height:100vh;
   pointer-events:none;
-  border:2px solid red;
 }
 
 #kaede, #kaede::before, #kaede::after,
@@ -59,19 +58,7 @@
     opacity:1.0;
   }
   100%{
-    transform:translate(0, var(--m)) rotate(180deg);
+    transform:translate(0, var(--m)) rotate(var(--r));
     opacity:0.0;
   }
 }
-
-/* @keyframes swayFall {
-  0% {
-    transform: translate(var(--x), var(--y)) rotate(var(--r));
-  }
-  50% {
-    transform: translate(calc(var(--x) + 10px), calc(var(--y) + 50px)) rotate(calc(var(--r) + 5deg));
-  }
-  100% {
-    transform: translate(calc(var(--x) - 10px), calc(var(--y) + 100vh)) rotate(calc(var(--r) - 5deg));
-  }
-} */

@@ -1,21 +1,13 @@
-import { SetCss } from "./set_css.js"
-import { Items }  from "./items.js"
+import { SetCss }  from "./set_css.js"
+import { Items }   from "./items.js"
+import { Setting } from "./setting.js"
 
 class Main{
-  #setting = {
-    count : 10,
-    time  : 20000,
-    size  : 25,
-    size_offset_rate : 0.8,
-    rotate_range : 360,
-    delay_time : 1500,
-    move  : 500,
-  }
-  #item
-
   constructor(){
     new SetCss()
-    this.#item = new Items(this.#setting)
+    const setting = new Setting()
+    if(!setting.datas.root){return}
+    new Items(setting.datas)
   }
 }
 
