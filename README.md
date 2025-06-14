@@ -23,4 +23,5 @@ Author : Yugeta.Koji
 2. src/main.jsを読み込み（ページ内どこでも設置可）
 
 
-
+# demo
+> https://yugeta.github.io/kaede/demo/
